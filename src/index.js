@@ -1,11 +1,28 @@
 $(document).ready(function(){
+
+    $.ajax({
+        type: "GET",
+        url: "https://api.thecatapi.com/v1/images/search?limit=5",
+        success: function (response) {
+            $.each(response, function(index, item) {
+                var key = index + 1;
+                var img = $('<img>');
+
+                
+
+                console.log(item.url)
+                
+            })
+        }
+    });
+
     $('.cats').slick({
         lazyLoad: 'ondemand',
         slidesToScroll: 1,
-        // dots: true,
-        // infinite: true,
+        dots: true,
+        infinite: true,
         slidesToShow: 3,
-        // slidesToScroll: 3
+        adaptiveHeight: true
     });
 
     $('.cats').on('swipe', function(event, slick, direction){
