@@ -26,6 +26,7 @@ $(document).ready(function(){
                         slidesToScroll: 1,
                         dots: true,
                         slidesToShow: 3,
+                        autoplay: true,
                     });
 
                     $('.cats').on('swipe', function(event, slick, direction){
