@@ -9,7 +9,16 @@ $(document).ready(function(){
     });
 
     $('.cats').on('swipe', function(event, slick, direction){
-        console.log(direction);
+        console.log('Swipe direction: ' + direction);
+    });
+
+    $('.cats').on('click', '.slick-prev', function() {
+        console.log('Arrow previous clicked!');
+    });
+    
+    // Captura o clique na seta "próxima"
+    $('.cats').on('click', '.slick-next', function() {
+        console.log('Arrow next clicked!');
     });
 
 
