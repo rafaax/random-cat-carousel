@@ -6,7 +6,7 @@ $(document).ready(function(){
         return new Promise (function (resolve, reject) {
             $.ajax({
                 type: "GET",
-                url: "https://api.thecatapi.com/v1/images/search?size=small&limit=10",
+                url: "https://api.thecatapi.com/v1/images/search?size=small&mime_types=gif&limit=10",
                 success: function (response) {
                     $.each(response, function(index, item) {
                         var key = index + 1;
@@ -23,10 +23,8 @@ $(document).ready(function(){
                     })
                     
                     $('.cats').slick({
-                        // lazyLoad: 'ondemand',
                         slidesToScroll: 1,
                         dots: true,
-                        infinite: true,
                         slidesToShow: 3,
                     });
 
@@ -41,7 +39,10 @@ $(document).ready(function(){
                     $('.cats').on('click', '.slick-next', function() {
                         console.log('Arrow next clicked!');
                     });
-                    
+                    resolve()
+                },
+                error: function(){
+                    reject();
                 }
             });   
         })
