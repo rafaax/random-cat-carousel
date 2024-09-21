@@ -1,6 +1,4 @@
 html, body {
-    margin: 0;
-    padding: 0;
     background-color: grey;
 }
 
@@ -14,28 +12,28 @@ box-sizing: border-box;
 }
 
 .slick-slide {
-margin: 0px 20px;
+    margin: 0px 5px;
 }
 
 .slick-slide img {
-width: 100%;
+    width: 100%;
 }
 
 .slick-prev:before,
 .slick-next:before {
-color: black;
+    color: black;
 }
 
 
 .slick-slide {
-transition: all ease-in-out .3s;
-opacity: .2;
+    transition: all ease-in-out .3s;
+    opacity: .2;
 }
 
 .slick-active {
-opacity: .5;
+    opacity: .5;
 }
 
 .slick-current {
-opacity: 1;
+    opacity: 1;
 }
