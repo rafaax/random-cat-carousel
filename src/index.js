@@ -2,7 +2,7 @@ $(document).ready(function(){
 
    
 
-    function slickRender(){
+    function slickRenderGif(){
         return new Promise (function (resolve, reject) {
             $.ajax({
                 type: "GET",
@@ -17,12 +17,12 @@ $(document).ready(function(){
                         cat_img.attr('height', item.height);
                         
                         // console.log(`#cat-${key}`)
-                        $(`#cat-${key}`).append(cat_img)
+                        $(`#cat_gifs-${key}`).append(cat_img)
                         
                         
                     })
                     
-                    $('.cats').slick({
+                    $('.cats-gifs').slick({
                         slidesToScroll: 1,
                         dots: true,
                         slidesToShow: 3,
@@ -49,7 +49,7 @@ $(document).ready(function(){
         })
     }
 
-    slickRender().then( () => {
+    slickRenderGif().then( () => {
         console.log('ok')
     }).catch(()=> {
         console.log('erro na request')
