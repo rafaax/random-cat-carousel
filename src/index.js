@@ -6,7 +6,7 @@ $(document).ready(function(){
         return new Promise (function (resolve, reject) {
             $.ajax({
                 type: "GET",
-                url: "https://api.thecatapi.com/v1/images/search?limit=10",
+                url: "https://api.thecatapi.com/v1/images/search?size=small&limit=10",
                 success: function (response) {
                     $.each(response, function(index, item) {
                         var key = index + 1;
@@ -28,7 +28,6 @@ $(document).ready(function(){
                         dots: true,
                         infinite: true,
                         slidesToShow: 3,
-                        adaptiveHeight: true
                     });
 
                     $('.cats').on('swipe', function(event, slick, direction){
